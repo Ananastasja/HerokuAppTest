@@ -22,12 +22,12 @@ public class AddAndRemoveTest {
         WebElement addButton = driver.findElement(By.xpath("//button[text()='Add Element']"));
         addButton.click();
         addButton.click();
-        List<WebElement> deleteButton = driver.findElements(By.xpath("//button[text()='Delete']"));
-        int numberOfButtonsBeforeDeleting = deleteButton.size();
+        List<WebElement> deleteButtonList = driver.findElements(By.xpath("//button[text()='Delete']"));
+        int numberOfButtonsBeforeDeleting = deleteButtonList.size();
         Assert.assertEquals(numberOfButtonsBeforeDeleting, 2);
         driver.findElement(By.xpath("//button[@class = 'added-manually'][1]")).click();
-        deleteButton = driver.findElements(By.xpath("//button[text()='Delete']"));
-        int numberOfButtonsAfterDeleting = deleteButton.size();
+        deleteButtonList = driver.findElements(By.xpath("//button[text()='Delete']"));
+        int numberOfButtonsAfterDeleting = deleteButtonList.size();
         Assert.assertEquals(numberOfButtonsAfterDeleting, 1);
         driver.quit();
     }

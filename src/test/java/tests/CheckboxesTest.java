@@ -17,14 +17,14 @@ public class CheckboxesTest {
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox_1 = driver.findElement(By.xpath("//input[1]"));
-        Assert.assertFalse(checkbox_1.isSelected());
-        checkbox_1.click();
-        Assert.assertTrue(checkbox_1.isSelected());
-        WebElement checkbox_2 = driver.findElement(By.xpath("//input[2]"));
-        Assert.assertEquals(checkbox_2.isSelected(), true);
-        checkbox_2.click();
-        Assert.assertEquals(checkbox_2.isSelected(), false);
+        WebElement checkbox1 = driver.findElement(By.xpath("//input[1]"));
+        Assert.assertFalse(checkbox1.isSelected());
+        checkbox1.click();
+        Assert.assertTrue(checkbox1.isSelected());
+        WebElement checkbox2 = driver.findElement(By.xpath("//input[2]"));
+        Assert.assertEquals(checkbox2.isSelected(), true);
+        checkbox2.click();
+        Assert.assertEquals(checkbox2.isSelected(), false);
         driver.quit();
     }
 }

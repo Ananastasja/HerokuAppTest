@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,14 +26,29 @@ public class DropDownTest {
             Assert.assertEquals(options[i], dropDownOptions.get(i).getText());
         }
         WebElement dropDown = driver.findElement(By.id("dropdown"));
-        WebElement first_option = driver.findElement(By.xpath("//option[@value='1']"));
+        WebElement firstOption = driver.findElement(By.xpath("//option[@value='1']"));
         dropDown.click();
-        first_option.click();
-        Assert.assertTrue(first_option.isSelected());
-        WebElement second_option = driver.findElement(By.xpath("//option[@value='2']"));
+        firstOption.click();
+        Assert.assertTrue(firstOption.isSelected());
+        WebElement secondOption = driver.findElement(By.xpath("//option[@value='2']"));
         dropDown.click();
-        second_option.click();
-        Assert.assertTrue(second_option.isSelected());
+        secondOption.click();
+        Assert.assertTrue(secondOption.isSelected());
         driver.quit();
+    }
+
+    @Test
+    public void choosingElementFromDropDownTest2() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        driver.manage().window().maximize();
+        driver.get("http://the-internet.herokuapp.com/dropdown");
+        Select select = new Select(driver.findElement(By.id("dropdown")));
+        select.selectByVisibleText("Option 2");
+        String selectedOption = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(selectedOption, "Option 2");
+        driver.quit();
+
     }
 }
