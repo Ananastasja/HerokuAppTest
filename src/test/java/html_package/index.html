@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 07</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="main-container">
+
+    <div id="header">
+        <nav>
+            <img src="./img/logo.png" alt="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="middle-box">
+        <h1>Stunning design Perfect quality. <br> Great prices.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam in fuga, excepturi et
+            distinctio vero delectus? Natus nulla provident minus sunt ut? Corporis harum ratione tenetur non quam
+            assumenda reprehenderit.
+        </p>
+        <button id="learn-more-button" type="button" onclick="window.location.href='#'">learn more</button>
+        <div class="fieldset-form">
+            <h2>Fill our registration form to get more info</h2>
+            <fieldset>
+                <label>Name: <br>
+                    <input class="input-text name-field" type="text" required> <br><br>
+                </label>
+                <label>Phone: <br>
+                    <input class="input-text tel-field" type="tel" required>
+                </label><br><br>
+                <label>Gender: <br>
+                    <select class="input-text" id="gender">
+                        <option selected="true" disabled="disabled">Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </label><br><br>
+                <label>Agree with our policy: <input id="checkbox" type="checkbox" value="agreement" checked></label><br><br>
+                <input id="submit-button" type="submit"><br><br>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <h2>Check our prices</h2>
+        <table>
+            <tr id="tableHead">
+                <th>Service</th>
+                <th>Duration</th>
+                <th>Price</th>
+            </tr>
+            <tr id="firstRow">
+                <td>Whole flat design</td>
+                <td>2-4 days</td>
+                <td>750 Euros</td>
+            </tr><tr id="secondRow">
+                <td>Kitchen design</td>
+                <td>1-2 days</td>
+                <td>450 Euros</td>
+            </tr><tr id="thirdRow">
+                <td>Bathroom design</td>
+                <td>1-2 days</td>
+                <td>350 Euros</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
