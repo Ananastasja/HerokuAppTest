@@ -2,8 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.io.File;
+import java.util.List;
 
 public class FileDownloadPage extends BasePage {
     public FileDownloadPage(WebDriver driver) {
@@ -11,28 +13,22 @@ public class FileDownloadPage extends BasePage {
     }
 
     private static final String FILE_DOWNLOADER_URL = BASE_URL + "/download";
-    //List<WebElement> downloadLinksList = driver.findElements(By.xpath("//*[@class=\"example\"]/a"));
-    private static final By LINK_TO_DOWNLOAD = By.xpath("//a[contains(text(), 'evening')]");
-    private static final String DOWNLOAD_PATH = "C:/Users/nastu/Downloads";
-
 
     public void openPage() {
         driver.get(FILE_DOWNLOADER_URL);
     }
 
-   /* public void downloadElement() {
-        WebElement downloadLink = downloadLinksList.get(2);
-        downloadLink.click();
-    }*/
-
-    //don't understand why the size is 0 in error message as this is a List of elements
-
-    public void downloadElement() {
-        driver.findElement(LINK_TO_DOWNLOAD).click();
+    public List<WebElement> downloadElementList() {
+        return driver.findElements(By.xpath("//*[@class='example']/a"));
     }
 
-    public File getLatestFileFromDir(String dirPath){
-        File dir = new File(dirPath);
+    public void downloadElementByIndex(int index) throws InterruptedException {
+        downloadElementList().get(index).click();
+        Thread.sleep(7000);
+    }
+
+    public File getLatestFileFromDir(){
+        File dir = new File(System.getProperty("user.dir"));
         File[] files = dir.listFiles();
         if (files == null || files.length == 0) {
             return null;
@@ -48,7 +44,7 @@ public class FileDownloadPage extends BasePage {
     }
 
     public String getExpectedLastFileName() {
-        File getLatestFile = getLatestFileFromDir(DOWNLOAD_PATH);
+        File getLatestFile = getLatestFileFromDir();
         String fileName = getLatestFile.getName();
         return fileName;
     }

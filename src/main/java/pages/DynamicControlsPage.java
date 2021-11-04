@@ -9,11 +9,11 @@ public class DynamicControlsPage extends BasePage {
     }
 
     private static final String DYNAMIC_CONTROLS_URL = BASE_URL + "/dynamic_controls";
-    private static final By CHECKBOX_BTN = By.xpath("//*[@id=\"checkbox\"]/input");
-    private static final By REMOVE_BTN = By.xpath("//*[@id=\"checkbox-example\"]/button");
+    private static final By CHECKBOX_BTN = By.xpath("//*[@id='checkbox']/input");
+    private static final By REMOVE_BTN = By.xpath("//*[@id='checkbox-example']/button");
     private static final By TEXT_AFTER_WAIT = By.xpath("//*[@id='message']");
-    private static final By INPUT_FIELD = By.xpath("//*[@id=\"input-example\"]/input");
-    private static final By ENABLE_BTN = By.xpath("//*[@id=\"input-example\"]/button");
+    private static final By INPUT_FIELD = By.xpath("//*[@id='input-example']/input");
+    private static final By ENABLE_BTN = By.xpath("//*[@id='input-example']/button");
 
     public void openPage() {
         driver.get(DYNAMIC_CONTROLS_URL);

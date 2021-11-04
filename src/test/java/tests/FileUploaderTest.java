@@ -10,8 +10,8 @@ public class FileUploaderTest extends BaseTest {
 
     private static final String EXPECTED_CONFIRMATION_MESSAGE = "File Uploaded!";
     private static final String EXPECTED_ERROR = "Internal Server Error";
-    private static final String PATH_TO_FILE = "C:\\hello.png";
-    private static final String UPLOADED_FILE_NAME = "hello.png";
+    private static final String PATH_TO_FILE = "hello.jpg";
+    private static final String UPLOADED_FILE_NAME = "hello.jpg";
 
     @Test
     public void uploadFileTest() {

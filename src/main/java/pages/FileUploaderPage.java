@@ -8,12 +8,9 @@ public class FileUploaderPage extends BasePage {
         super(driver);
     }
 
-    //how to do drag and drop from PC to website?
-
     private static final String FILE_UPLOADER_URL = BASE_URL + "/upload";
     private static final By FILE_UPLOAD_FIELD = By.id("file-upload");
     private static final By FILE_UPLOAD_BTN = By.id("file-submit");
-    //private static final By DRAG_DROP_UPLOAD_BOX = By.id("drag-drop-upload");
     private static final By UPLOAD_CONFIRMATION_TEXT = By.xpath("//h3");
     private static final By UPLOAD_ERROR = By.xpath("//h1");
     private static final By UPLOAD_FILE_NAME = By.id("uploaded-files");

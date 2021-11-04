@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -37,5 +38,14 @@ public class ContextMenuPage extends BasePage{
 
     public void closeAlert() {
         driver.switchTo().alert().accept();
+    }
+
+    public boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
+            return true;
+        }catch (NoAlertPresentException Ex) {
+            return false;
+        }
     }
 }

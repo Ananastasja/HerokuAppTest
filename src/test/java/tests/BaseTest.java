@@ -20,9 +20,8 @@ public class BaseTest {
 
     @BeforeMethod
     public void initTest() {
-        //not sure where I have to place this info for downloading
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-        chromePrefs.put("download.default_directory", System.getProperty("C:\\Users\\nastu\\Downloads"));
+        chromePrefs.put("download.default_directory", System.getProperty("user.dir"));
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", chromePrefs);
         WebDriverManager.chromedriver().setup();

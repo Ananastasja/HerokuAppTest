@@ -23,7 +23,6 @@ public class ContextMenuTest extends BaseTest {
         contextMenuPage.openPage();
         contextMenuPage.clickTheContextMenu();
         contextMenuPage.closeAlert();
-        //don't know what kind of assert I could place here
-        //or I can just combine these two tests
+        Assert.assertFalse(contextMenuPage.isAlertPresent());
     }
 }
